@@ -1,6 +1,9 @@
 import sys
 from playwright.sync_api import sync_playwright
 
+titulo_esperado = "Swag Labs"
+
+
 with sync_playwright() as p:
     navegador = p.chromium.launch()
     pagina = navegador.new_page()
@@ -8,8 +11,8 @@ with sync_playwright() as p:
     titulo = pagina.title()
     navegador.close()
 
-if titulo == "Swag Labs X":
+if titulo == titulo_esperado:
     print("PASA: el título es correcto")
 else:
-    print(f"FALLA: se esperaba 'Swag Labs' y llegó '{titulo}'")
+    print(f"FALLA: se esperaba '{titulo_esperado}' y llegó '{titulo}'")
     sys.exit(1)
