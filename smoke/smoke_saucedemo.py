@@ -8,7 +8,7 @@ with sync_playwright() as p:
     titulo = pagina.title()
     navegador.close()
 
-if titulo == "Swag Labs":
+if titulo == "Swag Labs X":
     print("PASA: el título es correcto")
 else:
     print(f"FALLA: se esperaba 'Swag Labs' y llegó '{titulo}'")
